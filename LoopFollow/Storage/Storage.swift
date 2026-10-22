@@ -217,6 +217,7 @@ class Storage {
     var nsWriteAuth = StorageValue<Bool>(key: "nsWriteAuth", defaultValue: false)
     var nsAdminAuth = StorageValue<Bool>(key: "nsAdminAuth", defaultValue: false)
     var webSocketEnabled = StorageValue<Bool>(key: "webSocketEnabled", defaultValue: true)
+    var nightscoutUseSafariView = StorageValue<Bool>(key: "nightscoutUseSafariView", defaultValue: false)
 
     // When adding a new migration step in `runMigrationsIfNeeded()`, bump this default
     // to the new latest step number so fresh installs skip all migrations. Other defaults
