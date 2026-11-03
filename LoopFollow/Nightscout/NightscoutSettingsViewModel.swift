@@ -72,6 +72,12 @@ class NightscoutSettingsViewModel: ObservableObject {
 
     @Published var webSocketStatus: String = "Disconnected"
 
+    @Published var useSafariView: Bool = Storage.shared.nightscoutUseSafariView.value {
+        didSet {
+            Storage.shared.nightscoutUseSafariView.value = useSafariView
+        }
+    }
+
     var webSocketStatusColor: Color {
         switch NightscoutSocketManager.shared.connectionState {
         case .authenticated: return .green

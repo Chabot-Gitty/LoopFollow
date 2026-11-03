@@ -17,6 +17,7 @@ struct NightscoutSettingsView: View {
             tokenSection
             statusSection
             webSocketSection
+            webViewSection
 
             if viewModel.isFreshSetup {
                 continueSection
@@ -174,6 +175,16 @@ struct NightscoutSettingsView: View {
                     .foregroundStyle(Color.accentColor)
             }
             .buttonStyle(.plain)
+        }
+    }
+
+    private var webViewSection: some View {
+        Section {
+            Toggle("Open in Safari View", isOn: $viewModel.useSafariView)
+        } header: {
+            Text("Nightscout Tab")
+        } footer: {
+            Text("Opens your site in a Safari view instead of the built-in web view. Use this if your site requires a passkey or other browser sign-in. The sign-in is remembered by LoopFollow but not shared with Safari.")
         }
     }
 
